@@ -1,0 +1,149 @@
+/* reset */ 
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables (paleta de marca) */
+:root {
+    --color-primario: hsl(330, 85%, 55%); /* #ec3a8b */
+    --color-primario-claro: hsl(330, 85%, 72%); /* #f37bb1 */
+    --color-primario-oscuro: hsl(330, 75%, 40%); /* #b3196a */
+    
+    /*Acento (cian)*/
+    --color-acento: hsl(190, 90%, 45%); /* #0db4da */
+    --color-acento-oscuro: hsl(190, 90%, 35%); /* #0a8ca3 */
+
+    /*Neutros*/
+    --color-fondo: hsl(220, 30%, 98%); /* #ffffff */
+    --color-texto: hsl(0, 0%, 20%); /* #333333 */
+    --color-texto-claro: hsl(0, 0%, 50%); /* #808080 */
+    --color-texto-oscuro: hsl(0, 0%, 10%); /* #1a1a1a */
+
+}
+/* base*/   
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--color-texto);
+    line-height: 1.2;
+}
+
+ h1{
+    font-size: 2.5rem;  
+     }
+h2{
+    font-size: 1.75rem;  
+    }
+ h3{
+    font-size: 1.25rem;  
+    }
+
+
+/* layout head */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-fondo);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.nav__logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+}
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav__link {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav__link:hover {
+    color: var(--color-primario);
+}
+
+/* layout main */
+main {
+    padding: 2rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+main h2 {
+    margin-bottom: 1rem;
+    }
+
+    /* layout galeria */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+/* layout swatch */
+.swatch{    
+    display: flex;
+    flex-direction: column; 
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--color-fondo);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s; box-shadow 0.2s;
+}
+
+.swatch__color{ 
+    height: 7rem;
+    background-color: var(--color-primario);
+}
+.swatch__info {
+    padding: 1rem;
+}
+.swatch__nombre {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+}
+.swatch__codigo {
+    font-size: 0.875rem;
+    color: var(--color-texto-claro);
+    }
+ .swatch__color--claro{
+        background-color: var(--color-primario-claro);
+    }
+.swatch__color--oscuro{
+    background-color: var(--color-primario-oscuro); 
+}
+.swatch__color--acento{
+    background-color: var(--color-acento); 
+}
+
+.swatch:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.swatch:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+/* layout footer*/ 
+footer{
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--color-texto-claro);
+    border-top: 1px solid var(--color-texto-claro);
+    margin-top: 2rem;
+    }
