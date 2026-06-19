@@ -24,7 +24,22 @@
    <main>
         <section id="generador">
           <h2>Generar de paleta</h2>
-         <section class="galeria">
+          
+<div class="controles">
+      <button class="boton boton--primario" id="generar"> Generar paleta</button>
+      <div class="controles__campo">
+      <label class="controles__label" for="cantidad">cantidad colores</label>
+    <select class="select" id="cantidad">
+        <option value="6">6 colores</option>
+        <option value="8">8 colores</option>
+        <option value="10">10 colores</option>
+      </select>
+    </div>
+  </div>
+
+  <section class="galeria" id="galeria"></section>
+</section>
+         <!-- <section class="galeria">
            <article class="swatch">
             <div class="swatch__color"></div>
             <div class="swatch__info" >
@@ -56,7 +71,7 @@
               <p class="swatch__codigo"> #0db4da . hsl(190, 90%, 45%)</p>
             </div>
            </article>
-         </section>
+         </section> -->
 
         </section>
    </main>

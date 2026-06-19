@@ -1,56 +1,68 @@
 /* reset */ 
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* variables (paleta de marca) */
-:root {
-    --color-primario: hsl(330, 85%, 55%); /* #ec3a8b */
-    --color-primario-claro: hsl(330, 85%, 72%); /* #f37bb1 */
-    --color-primario-oscuro: hsl(330, 75%, 40%); /* #b3196a */
-    
-    /*Acento (cian)*/
-    --color-acento: hsl(190, 90%, 45%); /* #0db4da */
-    --color-acento-oscuro: hsl(190, 90%, 35%); /* #0a8ca3 */
+/* Variables */
 
-    /*Neutros*/
-    --color-fondo: hsl(220, 30%, 98%); /* #ffffff */
-    --color-texto: hsl(0, 0%, 20%); /* #333333 */
-    --color-texto-claro: hsl(0, 0%, 50%); /* #808080 */
-    --color-texto-oscuro: hsl(0, 0%, 10%); /* #1a1a1a */
+:root {
+
+  /* Marca - mismo Hue 330, variando Lightness */
+
+  --color-primario: hsl(330, 81%, 55%);          /* #ec3a8b */
+  --color-primario-claro: hsl(330, 85%, 72%);   /* #f37bb1 */
+  --color-primario-oscuro: hsl(330, 75%, 40%);  /* #b3196a */
+
+
+  /* Acento (cian) */
+
+  --color-acento: hsl(190, 90%, 45%);           /* #0db4da */
+  --color-acento-oscuro: hsl(190, 90%, 35%);    /* #0a8caa */
+
+
+  /* Neutros (Hue frío 220) */
+
+  --color-fondo: hsl(220, 30%, 98%);            /* #f8fafc */
+  --color-superficie: hsl(0, 0%, 100%);         /* #ffffff */
+  --color-borde: hsl(220, 15%, 88%);            /* #dcdfe6 */
+  --color-texto: hsl(220, 25%, 18%);            /* #232b3a */
+  --color-texto-suave: hsl(220, 12%, 45%);      /* #666f80 */
 
 }
-/* base*/   
+
+/* Base */
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: 'Fredoka', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: "Fredoka", sans-serif;
     color: var(--color-texto);
     line-height: 1.2;
 }
 
- h1{
-    font-size: 2.5rem;  
-     }
-h2{
-    font-size: 1.75rem;  
-    }
- h3{
-    font-size: 1.25rem;  
-    }
+h1 {
+    font-size: 2.5rem;
+}
 
+h2 {
+    font-size: 1.75rem;
+}
 
-/* layout head */
-.nav{
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Header */
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,92 +70,215 @@ h2{
     background-color: var(--color-fondo);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 .nav__logo {
-    font-family: 'Fredoka', sans-serif;
+    font-family: "Fredoka", sans-serif;
     font-size: 1.5rem;
     color: var(--color-primario);
 }
+
 .nav__links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
+
 .nav__link {
     text-decoration: none;
     color: var(--color-texto);
     font-weight: 600;
     transition: color 0.3s;
 }
+
 .nav__link:hover {
     color: var(--color-primario);
 }
 
-/* layout main */
+/* Controles */
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+
+    box-shadow: 0 8px 16px hsl(220 25% 18% / 0.06);
+}
+
+.controles__campo {
+    display: flex;
+    flex-direction: center;
+    gap: 0.35rem;
+}
+
+.controles__label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+/* Select */
+.controles__select {
+    padding: 0.75rem;
+    border: 1px solid var(--color-primario-claro);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.select {
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    padding: 0.65rem 2.25rem 0.65rem 0.9rem;
+
+    border: 2px solid var(--color-borde);
+    border-radius: 0.5rem;
+
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 0.9rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Botones */
+.boton {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.boton--primario {
+    background-color: var(--color-acento);
+    color: white;
+}
+
+.boton--primario:hover {
+    background-color: var(--color-acento-oscuro);
+}
+
+.boton--primario:active {
+    transform: translateY(1px);
+}
+
+/* Main */
 main {
     padding: 2rem 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
 }
+
 main h2 {
     margin-bottom: 1rem;
-    }
+}
 
-    /* layout galeria */
+/* Galería */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
 }
-/* layout swatch */
-.swatch{    
+
+/* Swatch */
+.swatch {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     border-radius: 0.75rem;
     overflow: hidden;
     background-color: var(--color-fondo);
+
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: transform 0.3s; box-shadow 0.2s;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.2s;
+
+    animation: swatch-aparece 0.5s ease;
 }
 
-.swatch__color{ 
+.swatch__color {
     height: 7rem;
     background-color: var(--color-primario);
 }
+
 .swatch__info {
     padding: 1rem;
 }
+
 .swatch__nombre {
-    font-family: 'Fredoka', sans-serif;
+    font-family: "Fredoka", sans-serif;
     font-size: 1rem;
 }
+
 .swatch__codigo {
     font-size: 0.875rem;
     color: var(--color-texto-claro);
-    }
- .swatch__color--claro{
-        background-color: var(--color-primario-claro);
-    }
-.swatch__color--oscuro{
-    background-color: var(--color-primario-oscuro); 
 }
-.swatch__color--acento{
-    background-color: var(--color-acento); 
+
+.swatch__color--claro {
+    background-color: var(--color-primario-claro);
+}
+
+.swatch__color--oscuro {
+    background-color: var(--color-primario-oscuro);
+}
+
+.swatch__color--acento {
+    background-color: var(--color-acento);
 }
 
 .swatch:hover {
     transform: translateY(-4px);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .swatch:focus {
     outline: 3px solid var(--color-acento);
     outline-offset: 2px;
 }
 
-/* layout footer*/ 
-footer{
+/* Footer */
+footer {
     text-align: center;
     padding: 1.5rem;
     color: var(--color-texto-claro);
     border-top: 1px solid var(--color-texto-claro);
     margin-top: 2rem;
+}
+
+/* Animación */
+@keyframes swatch-aparece {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
