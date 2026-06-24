@@ -3,84 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- fuente principal -->
+
+    <!-- fuente principal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">  
-    <title>proyecto ft76</title>  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    
+   <title>Proyecto ft76</title>
 </head>
 
 <body>
     <header>
-     <nav class="nav">
-        <span class="nav__logo">Colorfly Studio</span>
-        <ul class="nav__links">
-            <li><a class="nav__link" href="#generador">generador</a></li>
-        </ul>
-     </nav>    
-    </header>   
-   <main>
+        <nav class="nav">
+            <span class="nav__logo">Colorfly Studio</span>
+
+            <ul class="nav__links">
+                <li><a class="nav__link" href="#generador">Generador</a></li>
+                <li><a class="nav__link" href="#guardadas">Guardadas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
         <section id="generador">
-          <h2>Generar de paleta</h2>
-          
-<div class="controles">
-      <button class="boton boton--primario" id="generar"> Generar paleta</button>
-      <div class="controles__campo">
-      <label class="controles__label" for="cantidad">cantidad colores</label>
-    <select class="select" id="cantidad">
-        <option value="6">6 colores</option>
-        <option value="8">8 colores</option>
-        <option value="9">9 colores</option>
-      </select>
-    </div>
-  </div>
+            <h2>Generar paleta</h2>
 
-  <section class="galeria" id="galeria"></section>
-</section>
-         <!-- <section class="galeria">
-           <article class="swatch">
-            <div class="swatch__color"></div>
-            <div class="swatch__info" >
-              <p class="swatch__nombre">primario</p>
-              <p class="swatch__codigo"> #ec3a8b . hsl(330, 85%, 55%)</p>
+            <div class="controles">
+                <button class="boton boton--primario" id="generar">
+                    Generar paleta
+                </button>
+
+                <div class="controles__campo">
+                    <label class="controles__label" for="cantidad">
+                        Cantidad colores
+                    </label>
+
+                    <select class="select" id="cantidad">
+                        <option value="6">6 colores</option>
+                        <option value="8">8 colores</option>
+                        <option value="9">9 colores</option>
+                    </select>
+                </div>
             </div>
-           </article>
 
-           <article class="swatch">
-            <div class="swatch__color swatch__color--claro"></div>
-            <div class="swatch__info" >
-              <p class="swatch__nombre">  primario claro </p>
-              <p class="swatch__codigo"> #f37bb1 . hsl(330, 85%, 72%)</p>
-            </div>
-           </article>
-
-           <article class="swatch">
-            <div class="swatch__color swatch__color--oscuro"></div>
-            <div class="swatch__info" >
-              <p class="swatch__nombre">primario oscuro</p>
-              <p class="swatch__codigo"> #b3196a . hsl(330, 75%, 40%)</p>
-            </div>
-           </article> 
-
-           <article class="swatch" tabindex="0"> 
-            <div class="swatch__color swatch__color--acento"></div>
-            <div class="swatch__info" >
-              <p class="swatch__nombre">Acento</p>
-              <p class="swatch__codigo"> #0db4da . hsl(190, 90%, 45%)</p>
-            </div>
-           </article>
-         </section> -->
-
+            <section class="galeria" id="galeria"></section>
         </section>
-   </main>
-   
-   <footer>
+    </main>
+
+    <footer>
         <p>© 2026 Colorfly Studio.</p>
     </footer>
-    <script src="js/script.js" defer></script>
+
+    <script src="./js/script.js" defer></script>
 </body>
-</html> 
+</html>
      
     
     
