@@ -1,7 +1,7 @@
-# colorfly studio
+# colorfly studio 🎨
 generador de paleta de colores interactico en formato HSL y HEX de forma aleatorias construido con HTML, CSS Y JavaScript.
 
-[ git gub pages] ( [text](https://github.com/MARCELO0585/ProyectoM1-Alejandro-Marcelo))
+🔗 **Link del proyecto:**(https://marcelo0585.github.io/ProyectoM1-Alejandro-Marcelo/)
  
 
 ## Tecnologias
@@ -12,11 +12,11 @@ generador de paleta de colores interactico en formato HSL y HEX de forma aleator
 - Git Hub Pages para despliegue de la pagina
 
 ## Como usar 
-Abre la aplicación en el navegador (link de la demo arriba)
-Selecciona la cantidad de colores que deseas generar entre (6, 8 o 9) en el menú desplegable
-Haz clic en el botón "Generar Paleta" para crear una nueva paleta aleatoria
-Haz clic en el ícono de copiar sobre cualquier color para copiar su código HEX al portapapeles
-Haz clic en bloquear en el icono del candado para guardar el color creado
+- Abre la aplicación en el navegador (link de la demo arriba)
+- Selecciona la cantidad de colores que deseas generar entre (6, 8 o 9) en el menú desplegable
+- Haz clic en el botón "Generar Paleta" para crear una nueva paleta aleatoria
+- Haz clic en el ícono de copiar sobre cualquier color para copiar su código HEX al portapapeles
+- Haz clic en bloquear en el icono del candado para guardar el color creado
 
 ## Proximos pasos
 - Generar los colores dinamicamente con JavaScript.
