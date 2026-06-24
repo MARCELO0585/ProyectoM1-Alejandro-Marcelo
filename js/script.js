@@ -1,92 +1,140 @@
-function generarColorHSL() {
-  const h= Math.round(Math.random()*360); 
-  return "hsl("+h+", 70%, 60%)";
- }
+const galeria = document.getElementById("galeria");
+const boton = document.getElementById("generar");
+const selector = document.getElementById("cantidad");
 
- function hslToHex(h, s, l) {
+let paleta = [];
+
+function hslToHex(h, s, l) {
   l = l / 100;
+
   const a = (s * Math.min(l, 1 - l)) / 100;
+
   const f = function (n) {
     const k = (n + h / 30) % 12;
-    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+
+    const color = l - a * Math.max(
+      Math.min(k - 3, 9 - k, 1),
+      -1
+    );
+
     return Math.round(255 * color)
       .toString(16)
       .padStart(2, "0");
   };
+
   return "#" + f(0) + f(8) + f(4);
 }
 
-function crearSwatch(colorHSL, colorHex, nombre) {
-  const swatch = document.createElement("article");
-  swatch.className = "swatch";  
- 
-  
-  // bloque superior: el rectangulo pintado con el color
-  const color = document.createElement('div')
-  color.className = "swatch__color"
-  color.style.backgroundColor = colorHSL;
-
-  // zona inferior: nombre + codigo
-  const info = document.createElement('div')
-  info.className = "swatch__info"; 
-
-  const elNombre = document.createElement('p')
-  elNombre.className = "swatch__nombre"
-  elNombre.textContent = nombre;
-
-  const elCodigo = document.createElement('p')
-  elCodigo.className = "swatch__codigo"
-  elCodigo.textContent = colorHex + " . " + colorHSL;
-  
-  info.appendChild(elNombre);
-  info.appendChild(elCodigo); 
-
-  swatch.append(color, info);
-   
-  return swatch;
-}
- 
 function generarColor() {
-  const h = Math.round(Math.random() * 360); 
-  const hsl = "hsl(" + h + ", 70%, 60%)";
+  const h = Math.round(Math.random() * 360);
+
+  const hsl = `hsl(${h}, 70%, 60%)`;
   const hex = hslToHex(h, 70, 60);
- 
- return { hsl: hsl, hex: hex};
+
+  return {
+    hsl,
+    hex,
+    locked: false
+  };
 }
 
-const galeria = document.getElementById("galeria");
+async function copiarColor(hex, hsl) {
+  const texto = `${hex}\n${hsl}`;
 
-function renderPaleta(cantidad){
-  galeria.innerHTML = "";
+  try {
+    await navigator.clipboard.writeText(texto);
 
-  for (let i = 0; i < cantidad; i++) {
-    const color = generarColor(); 
-    const swatch = crearSwatch(color.hsl,color.hex,"Color " + (i + 1)
-    );
-    galeria.appendChild(swatch);
+    alert(`Copiado:\n${hex}\n${hsl}`);
+  } catch (error) {
+    console.error("Error al copiar:", error);
   }
 }
 
- const boton = document.getElementById("generar");
- const selector = document.getElementById("cantidad")
-// //  const selector = document.getElementById("cantidad")
+function crearSwatch(color, nombre, index) {
+  const swatch = document.createElement("article");
+  swatch.className = "swatch";
 
- if (boton) {
- boton.addEventListener("click", function () { 
-  // const. cantidad =Number (selector.value);
-   renderPaleta(Number(selector.value));
+  const colorDiv = document.createElement("div");
+  colorDiv.className = "swatch__color";
+  colorDiv.style.backgroundColor = color.hsl;
+
+  colorDiv.addEventListener("click", function () {
+    copiarColor(color.hex, color.hsl);
   });
- } else {
-  console.log("no se encontro el boton ´generar´. revisar el html.")
- }
 
- selector. addEventListener("change", function (){
- renderPaleta(Number(selector.value));
- });
+  const info = document.createElement("div");
+  info.className = "swatch__info";
 
- renderPaleta(6);
+  const elNombre = document.createElement("p");
+  elNombre.className = "swatch__nombre";
+  elNombre.textContent = nombre;
 
+  const elCodigo = document.createElement("p");
+  elCodigo.className = "swatch__codigo";
+  elCodigo.textContent = `${color.hex} · ${color.hsl}`;
 
+  const botonLock = document.createElement("button");
+  botonLock.className = "swatch__lock";
+  botonLock.textContent = color.locked ? "🔒" : "🔓";
+
+  botonLock.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    paleta[index].locked = !paleta[index].locked;
+
+    mostrarPaleta();
+  });
+
+  info.append(elNombre, elCodigo, botonLock);
+
+  swatch.append(colorDiv, info);
+
+  return swatch;
+}
+
+function mostrarPaleta() {
+  galeria.innerHTML = "";
+
+  paleta.forEach((color, index) => {
+    const swatch = crearSwatch(
+      color,
+      `Color ${index + 1}`,
+      index
+    );
+
+    galeria.appendChild(swatch);
+  });
+}
+
+function renderPaleta(cantidad) {
+  while (paleta.length < cantidad) {
+    paleta.push(generarColor());
+  }
+
+  if (paleta.length > cantidad) {
+    paleta = paleta.slice(0, cantidad);
+  }
+
+  paleta = paleta.map((color) => {
+    if (color.locked) {
+      return color;
+    }
+
+    return generarColor();
+  });
+
+  mostrarPaleta();
+}
+
+boton.addEventListener("click", function () {
+  renderPaleta(Number(selector.value));
+});
+
+selector.addEventListener("change", function () {
+  renderPaleta(Number(selector.value));
+});
+
+renderPaleta(Number(selector.value));
 
 
   
