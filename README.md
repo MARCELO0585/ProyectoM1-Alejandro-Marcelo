@@ -13,6 +13,7 @@ generador de paleta de colores interactico en formato HSL y HEX de forma aleator
 
 ## estructura del proyecto 🎯
 
+```
 ProyectoM1_Alejandro-Marcelo/
 ├── index.html
 ├── css/
@@ -22,6 +23,7 @@ ProyectoM1_Alejandro-Marcelo/
 └── assets/
     ├── Img/
     ├── README.md/
+```
     
 
 ## Como usar 🚀
