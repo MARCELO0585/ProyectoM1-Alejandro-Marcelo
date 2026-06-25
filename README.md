@@ -1,5 +1,5 @@
 # Colorfly studio 🎨
-generador de paleta de colores interactico en formato HSL y HEX de forma aleatorias construido con HTML, CSS Y JavaScript.
+Generador de paleta de colores interactico en formato HSL y HEX de forma aleatorias construido con HTML, CSS Y JavaScript.
 
 🔗 **Link del proyecto:**(https://marcelo0585.github.io/ProyectoM1-Alejandro-Marcelo/)
  
