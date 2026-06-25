@@ -67,9 +67,3 @@ La IA fue utilizada para:
 **Alejandro marcelo**
 
 **Proyecto M1**
-
-## Autor
-
-**Alejandro marcelo**
-
-**Proyecto M1**
