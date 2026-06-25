@@ -1,4 +1,4 @@
-# colorfly studio 🎨
+# Colorfly studio 🎨
 generador de paleta de colores interactico en formato HSL y HEX de forma aleatorias construido con HTML, CSS Y JavaScript.
 
 🔗 **Link del proyecto:**(https://marcelo0585.github.io/ProyectoM1-Alejandro-Marcelo/)
@@ -11,7 +11,7 @@ generador de paleta de colores interactico en formato HSL y HEX de forma aleator
 - Git y GitHub para control de versiones
 - Git Hub Pages para despliegue de la pagina
 
-## estructura del proyecto 🎯
+## Estructura del proyecto 🎯
 
 ```
 ProyectoM1-Alejandro-Marcelo/
