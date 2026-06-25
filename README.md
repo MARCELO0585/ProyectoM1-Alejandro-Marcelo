@@ -35,6 +35,35 @@ ProyectoM1_Alejandro-Marcelo/
 
 ## Documentación del uso de IA 🤖
 
+Durante el desarrollo de Colorfly Studio utilicé inteligencia artificial como apoyo para mejorar la estructura del código en HTML, CSS y JavaScript, así como para optimizar la experiencia de usuario.
+
+### Mejoras realizadas con ayuda de IA
+#### Sistema de bloqueo de colores
+- Se incorporó la función de bloquear colores para conservarlos al generar nuevas paletas.
+- Se mejoró la retroalimentación visual mediante iconos y efectos visuales.
+
+#### Copiar códigos de color
+- Se implementó la función para copiar códigos HEX al portapapeles.
+- Se agregó una confirmación visual para informar al usuario que el color fue copiado correctamente.
+### Evidencia del uso de IA
+
+La IA fue utilizada para:
+- Resolver dudas de implementación en JavaScript.
+- Proponer mejoras de interfaz y experiencia de usuario.
+- Documentar funcionalidades implementadas en el proyecto.
+
+### Capturas del proceso
+![Evidencia 1](assets/evidencia-ia-1.png)
+
+![Evidencia 2](assets/evidencia-ia-2.png)
+
+![Evidencia 3](assets/evidencia-ia-3.png)
+
+## Autor
+
+**Alejandro marcelo**
+
+**Proyecto M1**
 
 ## Autor
 
