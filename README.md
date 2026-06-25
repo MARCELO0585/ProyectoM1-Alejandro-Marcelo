@@ -14,15 +14,18 @@ generador de paleta de colores interactico en formato HSL y HEX de forma aleator
 ## estructura del proyecto 🎯
 
 ```
-ProyectoM1_Alejandro-Marcelo/
-├── index.html
+ProyectoM1-Alejandro-Marcelo/
+├── README.md
+├── assets/
+│   ├── evidencia-ia-1.png
+│   ├── evidencia-ia-2.png
+│   └── evidencia-ia-3.png
 ├── css/
 │   └── style.css
-├── scrip/
-│   └── script.js
-└── assets/
-    ├── Img/
-    ├── README.md/
+├── index.html
+└── js/
+    └── script.js
+
 ```
     
 
